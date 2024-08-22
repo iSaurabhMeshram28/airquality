@@ -23,7 +23,6 @@ p {
 .container {
   width: 80%;
   max-width: 1200px;
-  /* Set a max-width to ensure consistency */
   margin: auto;
   padding: 20px;
 }
@@ -35,8 +34,50 @@ header {
 }
 
 #hero-title {
-  font-size: 2em;
+  font-size: 3.0em;
   color: #333;
+  font-weight: bold;
+  text-align: left;
+}
+
+#article-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.article-info-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.article-info-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 4px;
+}
+
+#date,
+#byline,
+#category {
+  margin: 0;
+  font-family: 'Roboto', serif;
+}
+
+#category {
+  text-align: right;
+}
+
+#category-link {
+  text-decoration: none;
+  color: #007bff;
+  /* Link color */
+}
+
+#category-link:hover {
+  text-decoration: underline;
 }
 
 #hero-image {
@@ -45,40 +86,41 @@ header {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
-  /* Center align the image */
 }
 
-#intro-text {
-  text-align: left;
-  /* Default to left alignment */
+section {
   margin-bottom: 20px;
+}
+
+#intro-section-1,
+#intro-section-2 {
+  text-align: left;
 }
 
 #city-selection {
   margin-top: 20px;
-  text-align: center; /* Center-align the content */
-  position: relative; /* Set relative positioning for containing the absolute positioning of the dropdown */
+  text-align: center;
+  position: relative;
 }
 
 .input-container {
-  display: inline-block; /* Allows setting width and centering */
+  display: inline-block;
   width: 100%;
-  max-width: 600px; /* Set max-width to 600px */
-  margin: 0 auto; /* Center the container */
-  position: relative; /* Set relative positioning for containing the absolute positioning of the dropdown */
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 20px;
 }
 
 #city-input {
   width: 97%;
-  /* Make the input field full width within the container */
   padding: 10px;
-  padding-right: 0px;
-  margin-bottom: 20px; /* Remove margin-bottom to eliminate space */
-  border: 2px solid #ccc; /* Ensure border is correct */
+  border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  box-shadow: none; /* Remove box-shadow if it creates a line */
   transition: border-color 0.3s ease;
+  margin-left: -2px;
+  padding-right: 0px;
 }
 
 #city-input:focus {
@@ -88,25 +130,26 @@ header {
 
 #city-list {
   list-style-type: none;
-  padding: 0;
-  max-height: 200px;
+  padding: 0px;
+  max-height: 150px;
   overflow-y: auto;
-  border: 1px solid #ccc; /* Ensure the border is correct */
+  border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: #fff;
-  width: 100%;
-  position: absolute; /* Absolute positioning */
-  top: 100%; /* Position below the input */
+  width: 98%;
+  position: absolute;
+  top: 100%;
   left: 0;
-  z-index: 10; /* Ensure it stays on top */
-  margin-top: 0; /* Remove margin-top to eliminate space */
+  z-index: 10;
+  margin-top: -1px;
+  margin-left: 4px;
 }
 
 #city-list li {
   padding: 12px;
   background: #f4f4f4;
-  margin: 0;
+  margin: 0px;
   cursor: pointer;
   border-bottom: 1px solid #ddd;
   transition: background-color 0.3s ease;
@@ -131,9 +174,12 @@ header {
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  min-height: 200px; /* Adjust based on content */
-  text-align: center; /* Center-align text and inline elements */
+  min-height: 200px;
+  text-align: center;
+  display: none;
+  /* Hide by default */
 }
+
 
 #city-info h3 {
   font-weight: bold;
@@ -142,7 +188,7 @@ header {
 }
 
 #city-info p {
-  margin: 10px 0; /* Adjust margins to stack elements */
+  margin: 10px 0;
 }
 
 #city-aqi {
@@ -162,36 +208,29 @@ header {
 #cigarette-icons {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Wrap icons if needed */
+  flex-wrap: wrap;
 }
 
 .cigarette-icon {
-  width: 24px; /* Adjust size as needed */
+  width: 24px;
   height: auto;
-  margin: 4px; /* Space between icons */
-}
-
-
-#selected-city {
-  font-weight: bold;
-  font-size: 1.2em;
+  margin: 4px;
 }
 
 @media (max-width: 600px) {
   .container {
     width: 95%;
-    /* Ensure container width fits mobile screens */
   }
 
-  #intro-text {
+  #intro-section-1,
+  #intro-section-2 {
     text-align: center;
-    /* Center alignment on tablets and mobile devices */
   }
 }
 
 @media (max-width: 768px) {
   #hero-title {
-    font-size: 1.5em;
-    /* Adjust title size for smaller screens */
+    font-size: 2.0em;
+    text-align: center;
   }
 }
