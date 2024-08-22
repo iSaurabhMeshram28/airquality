@@ -1,12 +1,29 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: #222;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.6;
+  color: #555;
 }
 
 .container {
   width: 80%;
+  max-width: 1200px;
+  /* Set a max-width to ensure consistency */
   margin: auto;
   padding: 20px;
 }
@@ -14,6 +31,7 @@ body {
 header {
   text-align: center;
   margin-bottom: 20px;
+  color: #007BFF;
 }
 
 #hero-title {
@@ -25,10 +43,15 @@ header {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  /* Center align the image */
 }
 
-p {
-  color: #666;
+#intro-text {
+  text-align: left;
+  /* Default to left alignment */
+  margin-bottom: 20px;
 }
 
 #city-selection {
@@ -36,9 +59,12 @@ p {
 }
 
 #city-input {
-  width: 98%;
+  width: 100%;
+  /* Make the input field full width within the container */
   padding: 12px;
+  padding-right: 0;
   margin-bottom: 10px;
+  margin-left: -2px;
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -60,6 +86,8 @@ p {
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: #fff;
+  width: 100%;
+
 }
 
 #city-list li {
@@ -81,8 +109,11 @@ p {
 
 #city-info {
   margin-top: 20px;
+  width: 100%;
+  /* Ensure info block is full width within container */
   background: #fff;
   padding: 20px;
+  padding-left: 0px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -96,5 +127,18 @@ p {
 @media (max-width: 600px) {
   .container {
     width: 95%;
+    /* Ensure container width fits mobile screens */
+  }
+
+  #intro-text {
+    text-align: center;
+    /* Center alignment on tablets and mobile devices */
+  }
+}
+
+@media (max-width: 768px) {
+  #hero-title {
+    font-size: 1.5em;
+    /* Adjust title size for smaller screens */
   }
 }
