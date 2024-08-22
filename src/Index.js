@@ -48,12 +48,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayCityInfo = (cityName, cityAqiValue, cityCigarettesValue) => {
     setElementText(selectedCity, cityName);
     setElementText(cityAqi, `AQI: ${cityAqiValue}`);
-    setElementText(cityCigarettes, `Cigarettes per day: ${cityCigarettesValue}`);
-
+    setElementText(document.getElementById('cigarettes-count'), `Cigarette Count: ${cityCigarettesValue}`);
+    
+    // Clear previous icons
+    const cigaretteIconsContainer = document.getElementById('cigarette-icons');
+    cigaretteIconsContainer.innerHTML = '';
+    
+    // Append the correct number of icons
+    for (let i = 0; i < cityCigarettesValue; i++) {
+      const img = document.createElement('img');
+      img.src = 'images/ciggrette_icon.png'; // Path to the cigarette icon
+      img.alt = 'Cigarettes Icon';
+      img.className = 'cigarette-icon';
+      cigaretteIconsContainer.appendChild(img);
+    }
+  
     cityInput.value = cityName;
     cityList.innerHTML = "";
     cityInfo.style.display = "block";
-  };
+  }; 
 
   const populateInitialData = () => {
     setElementText(heroTitle, data.hero_1_title);
@@ -85,5 +98,4 @@ function debounce(func, delay) {
     timeout = setTimeout(() => func.apply(this, args), delay);
   };
 }
-
 

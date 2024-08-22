@@ -56,19 +56,28 @@ header {
 
 #city-selection {
   margin-top: 20px;
+  text-align: center; /* Center-align the content */
+  position: relative; /* Set relative positioning for containing the absolute positioning of the dropdown */
+}
+
+.input-container {
+  display: inline-block; /* Allows setting width and centering */
+  width: 100%;
+  max-width: 600px; /* Set max-width to 600px */
+  margin: 0 auto; /* Center the container */
+  position: relative; /* Set relative positioning for containing the absolute positioning of the dropdown */
 }
 
 #city-input {
-  width: 100%;
+  width: 97%;
   /* Make the input field full width within the container */
-  padding: 12px;
-  padding-right: 0;
-  margin-bottom: 10px;
-  margin-left: -2px;
-  border: 2px solid #ccc;
+  padding: 10px;
+  padding-right: 0px;
+  margin-bottom: 20px; /* Remove margin-bottom to eliminate space */
+  border: 2px solid #ccc; /* Ensure border is correct */
   border-radius: 4px;
   font-size: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: none; /* Remove box-shadow if it creates a line */
   transition: border-color 0.3s ease;
 }
 
@@ -82,12 +91,16 @@ header {
   padding: 0;
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #ccc;
+  border: 1px solid #ccc; /* Ensure the border is correct */
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: #fff;
   width: 100%;
-
+  position: absolute; /* Absolute positioning */
+  top: 100%; /* Position below the input */
+  left: 0;
+  z-index: 10; /* Ensure it stays on top */
+  margin-top: 0; /* Remove margin-top to eliminate space */
 }
 
 #city-list li {
@@ -108,16 +121,56 @@ header {
 }
 
 #city-info {
-  margin-top: 20px;
+  margin-top: 30px;
   width: 100%;
-  /* Ensure info block is full width within container */
   background: #fff;
-  padding: 20px;
-  padding-left: 0px;
+  padding: 0px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  min-height: 200px; /* Adjust based on content */
+  text-align: center; /* Center-align text and inline elements */
 }
+
+#city-info h3 {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+#city-info p {
+  margin: 10px 0; /* Adjust margins to stack elements */
+}
+
+#city-aqi {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+#city-cigarettes {
+  font-size: 1em;
+}
+
+#city-cigarettes span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#cigarette-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap icons if needed */
+}
+
+.cigarette-icon {
+  width: 24px; /* Adjust size as needed */
+  height: auto;
+  margin: 4px; /* Space between icons */
+}
+
 
 #selected-city {
   font-weight: bold;
